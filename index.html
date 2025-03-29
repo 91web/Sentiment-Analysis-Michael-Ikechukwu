@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sentiment Analysis Tool</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+      <div class="spinner"></div>
+      <p>Loading Sentiment Analyzer...</p>
+      <p id="typing-effect"></p>
+      <script>
+        const text = "Michael Chiemeziem Ikechukwu.";
+        const typingEffect = document.getElementById("typing-effect");
+        let i = 0;
+        const typingSpeed = 60;
+
+        function typeWriter() {
+          if (i < text.length) {
+            typingEffect.innerHTML += text.charAt(i);
+            i++;
+            setTimeout(typeWriter, typingSpeed);
+          }
+        }
+
+        typeWriter();
+      </script>
+    </div>
+
+    <div class="container">
+      <div class="card">
+        <div class="card-header">
+          <h1 style="text-align: center; font-weight: bold">
+            Sentiment Analysis
+          </h1>
+          <p class="description" style="text-align: center">
+            Enter text in any supported language to analyze its sentiment. This
+            sentiment analysis tool utilizes natural language processing to
+            support Nigeria's four major languages: Igbo, Hausa, Yoruba, and
+            Pidgin.
+          </p>
+        </div>
+
+        <div class="card-content">
+          <div class="form-group">
+            <label for="language">Select a Language</label>
+            <div class="select-wrapper">
+              <select id="language">
+                <option value="english">English</option>
+                <option value="igbo">Igbo</option>
+                <option value="hausa">Hausa</option>
+                <option value="yoruba">Yoruba</option>
+                <option value="pidgin">Nigerian Pidgin</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="text">The Language Text to Analyze</label>
+            <textarea
+              id="text"
+              placeholder="Enter your text Language here..."
+              rows="6"
+            ></textarea>
+            <p id="error-message" class="error-message"></p>
+          </div>
+
+          <div id="result-container" class="result-container hidden">
+            <div class="result-header">
+              <div class="result-icon-container">
+                <div id="result-icon"></div>
+                <div>
+                  <h3>Sentiment Result</h3>
+                  <span id="sentiment-badge" class="badge"></span>
+                </div>
+              </div>
+              <div class="confidence-container">
+                <span class="confidence-label">Confidence</span>
+                <p id="confidence-value" class="confidence-value"></p>
+              </div>
+            </div>
+            <div id="result-details" class="result-details">
+              <h4>Analysis Details</h4>
+              <p id="result-explanation"></p>
+            </div>
+          </div>
+          <!-- Analyze Analyses Section -->
+          <div class="card-footer">
+            <button id="analyze-button" class="button">
+              Analyze Sentiment
+            </button>
+            <button id="clear-button" class="secondary-button">
+              Clear Input
+            </button>
+          </div>
+          <!-- Previous Analyses Section -->
+          <div id="history-container" class="history-container hidden">
+            <h3>Previous Analyses</h3>
+            <div id="history-list" class="history-list"></div>
+            <button id="clear-history" class="secondary-button">
+              Clear History
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- History Item Template -->
+    <template id="history-item-template">
+      <div class="history-item">
+        <div class="history-item-header">
+          <div class="history-item-text"></div>
+          <div class="history-item-badge"></div>
+        </div>
+        <div class="history-item-summary"></div>
+      </div>
+    </template>
+
+    <footer
+      style="
+        background-color: #333;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+        position: static;
+        bottom: auto;
+        margin-top: 20px;
+        width: 100%;
+        font-size: 14px;
+      "
+    >
+      &copy; 2025 All rights reserved.<br />
+      Sentiment analysis using NPL in Nigeria’s four major languages <br />
+      Michael Chiemeziem Ikechukwu.
+      <style>
+        footer {
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+          border-top: 1px solid #444;
+        }
+      </style>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
