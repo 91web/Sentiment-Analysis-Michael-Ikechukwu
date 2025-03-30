@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <!-- Loading Screen -->
     <div id="loading-screen" class="loading-screen">
       <div class="spinner"></div>
       <p>Loading Sentiment Analyzer...</p>
@@ -16,13 +15,15 @@
         const text = "Michael Chiemeziem Ikechukwu.";
         const typingEffect = document.getElementById("typing-effect");
         let i = 0;
-        const typingSpeed = 60;
+        const typingSpeed = 90;
 
         function typeWriter() {
           if (i < text.length) {
             typingEffect.innerHTML += text.charAt(i);
             i++;
             setTimeout(typeWriter, typingSpeed);
+          } else {
+            document.getElementById("loading-screen").style.display = "none";
           }
         }
 

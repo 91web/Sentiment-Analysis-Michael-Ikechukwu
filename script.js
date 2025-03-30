@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
     setTimeout(() => {
       loadingScreen.style.display = "none";
     }, 500);
-  }, 2000); // Show loader for 2 seconds
+  }, 8000); // Show loader for 2 seconds
 
   // DOM elements
   const apiKeyInput = document.getElementById("api-key");
