@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   // IMPORTANT: Replace this with your actual Gemini API key
-  const GEMINI_API_KEY = "AIzaSyCb5w3ZtaGsIh11KBck2BTBpG0h12FNp54";
+ // const GEMINI_API_KEY = "AIzaSyCb5w3ZtaGsIh11KBck2BTBpG0h12FNp54";
 
   // Loading screen
   const loadingScreen = document.getElementById("loading-screen");
